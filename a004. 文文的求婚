@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+    int ans;
+    while (scanf("%d", &ans) != EOF){
+        if ((ans % 400) == 0)    printf("閏年\n");
+        else if ((ans % 100) == 0)  printf("平年\n");
+        else if ((ans % 4) == 0)    printf("閏年\n");
+        else printf("平年\n");
+    }
+    return 0;
+}
