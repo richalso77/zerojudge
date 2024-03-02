@@ -1,0 +1,45 @@
+#include <iostream>
+#include <map>
+int main(){
+    std::map<char, int> check;
+    /*
+    A=10 台北市     J=18 新竹縣     S=26 高雄縣
+      B=11 台中市     K=19 苗栗縣     T=27 屏東縣
+      C=12 基隆市     L=20 台中縣     U=28 花蓮縣
+      D=13 台南市     M=21 南投縣     V=29 台東縣
+      E=14 高雄市     N=22 彰化縣     W=32 金門縣
+      F=15 台北縣     O=35 新竹市     X=30 澎湖縣
+      G=16 宜蘭縣     P=23 雲林縣     Y=31 陽明山
+      H=17 桃園縣     Q=24 嘉義縣     Z=33 連江縣
+      I=34 嘉義市     R=25 台南縣
+
+    */
+    check['A'] = 10;    check['J'] = 18;    check['S'] = 26;
+    check['B'] = 11;    check['K'] = 19;    check['T'] = 27;
+    check['C'] = 12;    check['L'] = 20;    check['U'] = 28;
+    check['D'] = 13;    check['M'] = 21;    check['V'] = 29;
+    check['E'] = 14;    check['N'] = 22;    check['W'] = 32;
+    check['F'] = 15;    check['O'] = 35;    check['X'] = 30;
+    check['G'] = 16;    check['P'] = 23;    check['Y'] = 31;
+    check['H'] = 17;    check['Q'] = 24;    check['Z'] = 33;
+    check['I'] = 34;    check['R'] = 25;
+
+    char x[20];
+    scanf("%s", x);
+    int temp;
+    temp  = check[x[0]];
+
+
+    int ans = temp / 10 + (temp % 10) * 9;
+    int index = 1;
+
+    for (int i = 8; i > 0; i--){
+        
+        ans += i * (x[index] - 48);
+        index++;
+    }
+    ans += x[index] - 48;
+    if (ans % 10)   printf("fake");
+    else printf("real");
+    return 0;
+}
