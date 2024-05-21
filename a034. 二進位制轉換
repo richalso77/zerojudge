@@ -1,0 +1,27 @@
+#include<iostream>
+#include<vector>
+
+using namespace std;
+
+void decimalToBinary(int x){
+	vector <int> ans;
+	int index;
+	while (x != 0) {
+		ans.push_back(x % 2);
+		x = x / 2;
+	}
+	index = ans.size();
+	for (int i = index - 1; i >= 0; i--) {
+		cout << ans[i];
+	}
+	cout << "\n";
+}
+
+int main() {
+	int x;
+
+	while (cin >> x) {
+		decimalToBinary(x);
+	}
+	return 0;
+}
