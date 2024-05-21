@@ -1,0 +1,47 @@
+#include<vector>
+#include<iostream>
+#include<cmath>
+
+using namespace std;
+
+int IsArmstrong(int x) {
+	int count = 0;
+	int temp = 1;
+	int x_2 = 0;
+
+	while (x / temp != 0) {
+		count++;
+		temp *= 10;
+	}
+
+	temp = 1;
+
+	while (x / temp != 0) {
+		x_2 += pow(x / temp % 10, count);
+
+		temp *= 10;
+	}
+	return x == x_2 ? 1 : 0;
+}
+
+int main() {
+	vector<int> ans;
+	int start, end;
+	int maxn;
+	cin >> start >> end;
+	for (int i = start; i <= end; i++) {
+		if (IsArmstrong(i) == 1) {
+			ans.push_back(i);
+		}
+	}
+	maxn = ans.size();
+	if (maxn == 0) {
+		cout << "none";
+	}
+	else {
+		for (int i = 0; i < maxn; i++) {
+			cout << ans[i] << " ";
+		}
+	}
+	return 0;
+}
