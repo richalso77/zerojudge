@@ -1,0 +1,19 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+int main(void) {
+	string x;
+	int max_x;
+	cin >> x;
+	max_x = x.size();
+
+	for (int i = 0; i < max_x / 2; i++) {
+		if (x[i] != x[max_x - i - 1]) {
+			cout << "no";
+			return 0;
+		}
+	}
+	cout << "yes";
+	return 0;
+}
