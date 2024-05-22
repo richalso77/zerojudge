@@ -1,0 +1,29 @@
+/*
+input	output
+0		1
+1		2
+2		4
+3		8
+4		14
+5		22
+6		32
+*/
+
+#include<iostream>
+
+using namespace std;
+
+int main() {
+	int x;
+	while (cin >> x) {
+		int ans;
+		if (x == 0) {
+			ans = 1;
+		}
+		else {
+			ans = x * x - x + 2;
+		}
+		cout << ans << "\n";
+	}
+	return 0;
+}
